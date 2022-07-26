@@ -1,0 +1,46 @@
+::ng-deep:root {
+    --primary-color: #833ab4;
+    --secondary-color: #aaa;
+}
+
+.input_group{
+    position: relative;
+    width: fit-content;
+}
+
+.input{
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font: inherit;
+    color: var(--primary-color);
+    background-color: transparent;
+    outline: 3px solid var(--secondary-color);
+}
+
+.input_label{
+    font-weight: bold;
+    position: absolute;
+    color: var(--secondary-color);
+    top: 0;
+    left: 0;
+    transform: translate(10px, 10px);
+    transition: transform .25s;
+}
+
+.input:focus+.input_label,
+.input:valid+.input_label{
+    transform: translate(10px,-18px) scale(.8);
+    color: var(--primary-color);
+    padding-inline: 5px;
+    background-color:transparent;
+}
+
+.input:is(:focus, :valid){
+    outline-color: var(--primary-color);
+}
+
+//disabled
+*:disabled{
+    cursor: no-drop;
+}
