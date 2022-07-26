@@ -9,7 +9,7 @@ export default {
   component: SubmitOkButtonComponent,
 } as Meta;
 
-export const actionsData = {
+const actionsData = {
     onSubmit: action('onSubmit'),
 };
 
@@ -23,10 +23,48 @@ const Template: Story<SubmitOkButtonComponent> = (args) => ({
 });
   
   //👇 Each story then reuses that template
-export const Primary = Template.bind({});
-Primary.args = { 
+export const Classic = Template.bind({});
+Classic.args = { 
         textLabel:"Button",
-        primaryColor:"#000",
-        secondaryColor:"#fff",
-        enabled:true
+        primaryColor:"#833ab4",
+        secondaryColor:"#39d56b",
+        buttonType: 'classic',
+        enabled:true,       
 };
+
+export const LeftButton = Template.bind({});
+LeftButton.args = { 
+        textLabel:"Button",
+        primaryColor:"#833ab4",
+        secondaryColor:"#39d56b",
+        buttonType: 'left',
+        enabled:true,       
+};
+
+export const TopButton = Template.bind({});
+TopButton.args = { 
+        textLabel:"Button",
+        primaryColor:"#833ab4",
+        secondaryColor:"#39d56b",
+        buttonType: 'top',
+        enabled:true,       
+};
+
+export const CircleButton = Template.bind({});
+CircleButton.args = { 
+        textLabel:"Button",
+        primaryColor:"#833ab4",
+        secondaryColor:"#39d56b",
+        buttonType: 'circle',
+        enabled:true,       
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = { 
+        textLabel:"Button",
+        primaryColor:"#833ab4",
+        secondaryColor:"#39d56b",
+        buttonType: 'left',
+        enabled:false,       
+};
+

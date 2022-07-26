@@ -4,3 +4,5 @@ export interface SubmitOkButton {
     secondaryColor:string,
     enabled:boolean
 }
+
+export type ButtonType = 'classic' | 'left' | 'top' | 'circle';

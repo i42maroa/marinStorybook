@@ -1,5 +1,7 @@
 <button
     class="button"
-    (click)="submit()">
+    (click)="submit()"
+    [ngClass]="classes"
+    [disabled]="!enabled">
     <span>{{textLabel}}</span>
 </button>

@@ -1,5 +1,5 @@
 import { Component, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
-import { SubmitOkButton } from 'src/app/models/submit-ok-button.model';
+import { ButtonType, SubmitOkButton } from 'src/app/models/submit-ok-button.model';
 
 @Component({
   selector: 'app-submit-ok-button',
@@ -14,6 +14,7 @@ export class SubmitOkButtonComponent implements OnChanges {
   @Input() primaryColor:string;
   @Input() secondaryColor:string;
   @Input() enabled:boolean;
+  @Input() buttonType:ButtonType = 'left';
 
   @Output() onSubmit = new EventEmitter<Event>();
 
@@ -29,7 +30,7 @@ export class SubmitOkButtonComponent implements OnChanges {
     
     this.textLabel="",
     this.primaryColor="#000",
-    this.secondaryColor="#fff",
+    this.secondaryColor="#ccc",
     this.enabled=true;
    }
 
@@ -44,10 +45,8 @@ export class SubmitOkButtonComponent implements OnChanges {
     this.onSubmit.emit();
    }
 
-  //  public get classes(): string[] {
-  //   const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';
-
-  //   return ['storybook-button', `storybook-button--${this.size}`, mode];
-  // }
+   public get classes(): string{
+    return `${this.buttonType}_hover_button`;
+  }
 
 }
